@@ -80,17 +80,42 @@ client.on('message', async(message,member) => {
 		// }, new PassThrough())
 		
 		// merger.addStream(screenStream)
+		// var asd = []
 		
 		RESV.on('speaking', async (user, speaking) => {
-			console.log(`User ${user.username} is speaking!`)
-			// if(user.bot) return
+			// console.log(speaking.bitfield)
 			
-			var curS = RESV.receiver.createStream(user, { mode: 'opus' });
-			// merger.addStream(curS);
-			// audioStream = RESV.receiver.createStream(user, { mode: 'opus' });
-			const reS = SEND.play(curS, { type: 'opus' })
+			// console.log(`User ${user.username} is speaking!`)
+			if(user.id===client.user.id) return
 			
-			reS.on('error', console.error);
+			// var curS = RESV.receiver.createStream(user, { mode: 'opus' });
+			// // merger.addStream(curS);
+			// // audioStream = RESV.receiver.createStream(user, { mode: 'opus' });
+			// const reS = SEND.play(curS, { type: 'opus' })
+			// reS.on('error', console.error);
+			
+			if(speaking.bitfield===1){
+				console.log(`User ${user.username} is speaking!`)
+				
+				var curS = RESV.receiver.createStream(user, { mode: 'opus' });
+				// curS.id = user.id;
+				// asd.push(curS)
+				// merger.addStream(curS);
+				// audioStream = RESV.receiver.createStream(user, { mode: 'opus' });
+				const reS = SEND.play(curS, { type: 'opus' })
+				reS.on('error', console.error);
+				
+				// console.log(asd)
+			}else if(speaking.bitfield===0){
+				console.log(`User ${user.username} stopped speaking`)
+				// for(var i = 0; i < asd.length; i++){
+					// if(asd[i].id===user.id){
+						// asd.splice(i, 1)
+					// }
+				// }
+				// console.log(asd)
+			}
+			
 		})
 		
 		// const reS = SEND.play(merger.result, { type: 'opus' });
@@ -122,4 +147,4 @@ client.on('message', async(message,member) => {
 	
 })
 
-client.login("YOURS");
+client.login("ODA0OTgyNTc0NjIyNTcyNTQ1.YBUQcQ.eVOvylv5ZuFgJ88SgvaYEhkaJSU");
