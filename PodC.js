@@ -122,4 +122,4 @@ client.on('message', async(message,member) => {
 	
 })
 
-client.login("ODA0OTgyNTc0NjIyNTcyNTQ1.YBUQcQ.9iXZFFvByrypJVPxieB5Q8yi9qc");
+client.login("YOURS");
