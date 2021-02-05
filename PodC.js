@@ -147,4 +147,4 @@ client.on('message', async(message,member) => {
 	
 })
 
-client.login("ODA0OTgyNTc0NjIyNTcyNTQ1.YBUQcQ.eVOvylv5ZuFgJ88SgvaYEhkaJSU");
+client.login("");
